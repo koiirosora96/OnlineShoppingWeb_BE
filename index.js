@@ -30,9 +30,20 @@ const client = new MongoClient(uri);
 async function run() {
   try {
     await client.connect();
+
+
+
     // database and collection code goes here
     const db = client.db("sample_guides");
     const coll = db.collection("comets");
+    const cursor = coll.find();
+    await cursor.forEach(console.log)
+
+
+
+    // database and collection code goes here
+    // const db = client.db("sample_guides");
+    // const coll = db.collection("comets");
 
 // insert code goes here
     // const docs = [
